@@ -9,10 +9,12 @@ You have been assigned with creating a custom marketing mix for a product with t
 
 You must provide an output that has the shape of a JSON, and ALWAYS respect the following structure:
 
-- Key: "You should definitely invest on", Value: \[...\],
-- Key: "You should consider investing on", Value: \[...\],
-- Key: "You should stay away from", Value: \[...\],
-- Key: "Other options", Value: "..."
+{{
+"You should definitely invest on": ...,
+"You should consider investing on": ...,
+"You should stay away from": ...,
+"Other options": "..."
+}}
 
 The items "You should definitely invest on", "You should consider investing on", and "You should stay away from" should always be tuples.
 The first item of the tuple must be one of the following channels:
