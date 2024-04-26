@@ -1,0 +1,99 @@
+﻿Prompts Strataigic
+
+
+1. Basic Product and Market Introduction Prompt
+Generate a comprehensive marketing strategy for the following product:
+* Product Name: {ProductName}
+* Product Description: {ProductDescription}
+* Product Type:  {ProductType}
+* Product Stage:  {ProductStage}
+* Unique Selling Points: {UniqueSellingPoints}
+* Target Audience: {TargetAudience}
+* Intended Launch Region: {Region}
+* Marketing Goals: {MarketingGoals}
+* Budget Range: {BudgetRange}
+
+
+Consider the cultural and economic factors of the region, and suggest the most effective channels and approaches for market penetration.
+
+
+
+
+2. Detailed Strategy Development Prompt
+Using the provided budget of {BudgetRange} and targeting {TargetAudience} in {Region}, develop a detailed marketing strategy that includes:
+* Recommended marketing channels (online, offline, mixed) and the rationale for each.
+* Potential partnerships or local influencers that could be leveraged.
+* Any region-specific consumer behaviour that should be considered.
+* Strategies considered but not recommended for this audience, including reasons for their unsuitability.
+* Estimated timeline and milestones for the campaign.
+* Predicted challenges and suggested mitigation strategies.
+* Expected outcomes and metrics for measuring success.
+
+
+
+
+3. Digital Marketing Focus Prompt
+For a product aimed at {TargetAudience} in {Region} with a focus on digital marketing within a budget of {BudgetRange}, provide:
+* An outline of digital marketing tactics suitable for the demographics of the region.
+* Suggested platforms (social media, search engines, email, etc.) and content types (videos, blogs, ads).
+* Ideas for digital campaigns, including themes and key messages.
+* Advice on ad spend distribution across platforms.
+* Recommendations for monitoring and analytics tools to track campaign performance.
+* Insights into local regulations and compliance issues for digital advertising.
+________________
+
+
+
+
+4. Regional Specifics and Cultural Considerations Prompt
+Elaborate on the cultural nuances and economic conditions of {Region} that could impact the marketing strategy for {ProductName}. Include:
+* Cultural do's and don'ts in advertising.
+* Popular media channels and their reach within different segments of {TargetAudience}.
+* Local holidays, events, or traditions that could be integrated into the marketing strategy.
+* Language and communication style preferences.
+* Economic factors such as purchasing power and consumer spending habits.
+
+
+5. Feedback and Iteration Request Prompt
+Based on the strategy provided:
+* What are the strengths of this approach?
+* Identify any potential gaps or areas for improvement.
+* Suggest alternative strategies if the expected outcomes do not align with {MarketingGoals}.
+* Provide additional insights or data that could enhance the effectiveness of the campaign.
+
+
+
+
+Example response from LLM:
+
+
+Marketing Strategy for EcoThrive Shoes
+Budget: $50,000 $100,000
+Target Audience: Environmentally conscious consumers aged 25-40
+Region: Northern Europe
+1. Marketing Channels Recommendation:
+* Online Channels:
+   * Social Media: Utilize platforms like Instagram and Facebook, which have high engagement among the target age group. Focus on creating visually appealing content that highlights the eco-friendly aspects of the shoes.
+   * Influencer Partnerships: Collaborate with eco-conscious influencers who can authentically promote the shoes. This lends credibility and can significantly boost brand awareness.
+   * Search Engine Marketing (SEM): Implement targeted ads focusing on keywords related to eco-friendly products and running shoes.
+* Offline Channels:
+   * Pop-up Events: Organize pop-up events in urban centers where environmental awareness is high, such as Stockholm or Copenhagen. These events can include product trials and recycling drives.
+   * Retail Partnerships: Partner with eco-friendly retail stores that align with the brand's values to stock your product.
+2. Regional Consumer Behavior Considerations:
+* In Northern Europe, there's a strong emphasis on sustainability. Highlight how purchasing these shoes can reduce environmental impact.
+* Transparency is crucial. Clearly communicate the product's lifecycle and environmental benefits.
+3. Timeline and Milestones:
+* Month 1-2: Brand and product awareness campaign using online channels and initiating influencer partnerships.
+* Month 3: Launch pop-up events aligned with local environmental events or dates like Earth Day.
+* Month 4-6: Analyze initial sales data, adjust marketing strategies as needed, and expand retail partnerships based on initial responses.
+4. Predicted Challenges and Mitigation Strategies:
+* Challenge: High competition in the eco-friendly product space.
+* Mitigation: Differentiate the brand by focusing on the zero-carbon manufacturing process and the unique biodegradable aspect of the shoes.
+5. Expected Outcomes and Metrics:
+* Brand Awareness: Aim to reach 500,000 impressions online within the first three months.
+* Market Penetration: Target to achieve at least 1% market penetration in the targeted region by the end of the first year.
+* Sales Targets: Aim to sell 2,000 pairs in the first six months.
+6. Feedback and Adjustment Loop:
+* Regularly collect consumer feedback through online surveys and at pop-up events.
+* Adjust marketing strategies based on sales data and consumer feedback to optimize the campaign continually.
+*
