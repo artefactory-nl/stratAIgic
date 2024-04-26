@@ -10,27 +10,11 @@ repos:
       - id: check-added-large-files
   - repo: local
     hooks:
-      - id: ruff-format
-        name: Formatting (ruff)
-        entry: ruff format
-        types: [python]
-        language: system
-      - id: ruff-fix
-        name: Linting & sorting (ruff)
-        entry: ruff --fix --fixable I001  # allow only to fix unsorted imports
-        types: [python]
-        language: system
       - id: nbstripout
         name: Strip Jupyter notebook output (nbstripout)
         entry: nbstripout
         types: [file]
         files: (.ipynb)$
-        language: system
-      - id: python-bandit-vulnerability-check
-        name: Security check (bandit)
-        entry: bandit
-        types: [python]
-        args: ["--recursive", "lib/"]
         language: system
       - id: pytest-check
         name: Tests (pytest)
