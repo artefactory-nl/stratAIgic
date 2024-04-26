@@ -1,0 +1,68 @@
+{
+    "id": 9808,
+    "created_at": 1713966351393,
+    "updated_at": 1713967178408,
+    "key": "NY60669NNM",
+    "product_name": "Satan's Breath",
+    "onboarding_step": 3,
+    "status": "onboarding",
+    "user_id": 11953,
+    "product_description": "We focus on small-batch brewing techniques to create unique and high-quality India Pale Ales (IPAs). Our business model revolves around offering a diverse range of IPA flavors, catering to niche markets of beer enthusiasts who appreciate bold and distinct tastes. Additionally, we prioritize direct sales through on-site taprooms, local distribution to bars and restaurants, and online sales through our website.",
+    "product_type": "Beer",
+    "product_stage": "Built  MVP, no sales yet",
+    "monetization": "We charge 3 euros on the website per beer. The bigger the batch, the lower the unit price. 6-pack is 16 euros and 12 pack is 30 euros.",
+    "target_audience": "Young, hipster, late-twenties to late-thirties adult, with an adventorous personality that craves new tastes an experiences. Furthermore, interested in supporting local brands.",
+    "personal_preferences": "Packaging is nearly as important as taste: we want the look of our beers to feature cool art, eye-catching.",
+    "language": "🇬🇧 English",
+    "url": "",
+    "persona_description": "{\n\"Name\": \"Eva\",\n\"Overview\": \"Eva is a 29-year-old financial analyst living in a vibrant city in the Netherlands. Despite her demanding career, she cherishes her social life, often spending weekends exploring new bars and restaurants with friends. Eva has developed a discerning taste for high-quality beverages, particularly IPAs, due to their bold flavors and the sense of adventure they evoke. She is always on the lookout for unique, locally brewed options that not only satisfy her palate but also align with her values of supporting local businesses.\",\n\"Problem\": \"Eva struggles to find IPAs that strike the perfect balance between unique, adventurous flavors and the quality that she expects from a premium craft beer. She is often disappointed by the lack of variety and the generic taste profiles of mainstream IPAs available in her local stores and bars.\",\n\"Pains\": [\n\"Disappointment with the predictable and uninspiring flavors of widely available IPAs.\",\n\"Frustration over the lack of information about the sourcing and brewing process of the beers she tries.\",\n\"Concern about supporting mass-produced beers rather than local, small-scale breweries.\",\n\"The struggle to find a beer that matches her social and environmental values.\",\n\"The inconvenience of having to visit multiple places to discover new and interesting IPA options.\"\n],\n\"Goal\": \"Eva seeks to discover a range of high-quality, distinctively flavored IPAs that challenge her taste buds and offer a new drinking experience with every sip. She wants these beers to be produced by a local brand that prioritizes sustainability and creativity, aligning with her personal values and her desire to support local businesses.\",\n\"Benefits\": [\n\"Enjoying a diverse range of bold and adventurous IPA flavors that are not found elsewhere.\",\n\"Feeling good about supporting a local brewery that values sustainability and quality.\",\n\"Having a go-to brand that consistently delivers new and interesting products, making her social gatherings more exciting.\",\n\"Access to detailed information about the brewing process and the source of ingredients, enhancing her appreciation and enjoyment of the beer.\",\n\"Convenience of purchasing her favorite beers online or directly from the brewery, easily integrating into her busy lifestyle.\"\n],\n\"Trigger\": \"After a particularly disappointing night out where the IPAs on offer were either too bland or simply reiterations of mainstream flavors, Eva decided it was time to seek out a brand that could meet her need for quality, uniqueness, and ethical production practices.\",\n\"Barriers\": [\n\"Concerns about the price point of premium craft beers in comparison to mainstream options.\",\n\"Uncertainty about committing to new flavors without tasting them first.\",\n\"Questions about the availability of her favorite options in local bars or for home delivery.\",\n\"Doubts about the sustainability practices of small breweries.\",\n\"Worries that the effort to find such a niche product may not be worth the potential disappointment.\"\n],\n\"Status-quo\": \"Eva currently alternates between purchasing popular IPAs from local liquor stores and ordering craft beers at bars, despite frequently being let down by their lack of uniqueness and depth in flavor.\",\n\"Context\": [\n\"Is aware of several local and international craft beer brands, but hasn't found one that consistently meets her expectations.\",\n\"Has attended beer tasting events in the past but found them overwhelming and not tailored to her specific interest in IPAs.\",\n\"Follows several beer enthusiasts and brewery accounts on social media for recommendations.\",\n\"Sometimes resorts to purchasing whatever IPAs are available at her local store, leading to dissatisfaction.\",\n\"Is curious about small-batch brewing techniques and the potential for unique flavors they can offer.\"\n],\n\"Prompt\": \"Mid-20s woman, finance professional, trendy, inquisitive gaze, holding a uniquely designed IPA bottle, standing in an urban setting, casual yet sophisticated style\"\n}",
+    "persona_overview": "Eva is a 29-year-old financial analyst living in a vibrant city in the Netherlands. Despite her demanding career, she cherishes her social life, often spending weekends exploring new bars and restaurants with friends. Eva has developed a discerning taste for high-quality beverages, particularly IPAs, due to their bold flavors and the sense of adventure they evoke. She is always on the lookout for unique, locally brewed options that not only satisfy her palate but also align with her values of supporting local businesses.",
+    "persona_nemesis": "Eva currently alternates between purchasing popular IPAs from local liquor stores and ordering craft beers at bars, despite frequently being let down by their lack of uniqueness and depth in flavor.",
+    "positioning_description": "",
+    "market_description": "",
+    "offer_description": "",
+    "pricing_description": "",
+    "brand_description": "",
+    "persona_inputs": {
+      "gender": "Female",
+      "country": "Netherlands",
+      "age": "25-34",
+      "comments": "Works in finance, loves a night out, wants to aim above the very minimum when it comes to the quality of her drinks,  spends way too much time partying"
+    },
+    "positioning_inputs": {
+      "style": "",
+      "customer_feelings": "",
+      "status-quo": "",
+      "comments": ""
+    },
+    "market_inputs": {
+      "insight": "",
+      "competitors": "",
+      "comments": ""
+    },
+    "offer_inputs": {
+      "features": "",
+      "differentiation": "",
+      "activation_type": "",
+      "comments": ""
+    },
+    "ideas_inputs": [],
+    "ideas_description": [],
+    "content_inputs": [],
+    "content_description": [],
+    "pricing_inputs": {
+      "customer_ltv": "",
+      "product_limits": "",
+      "costs": "",
+      "comments": ""
+    },
+    "brand_inputs": {
+      "emotions": "",
+      "approach": "",
+      "flags": "",
+      "comments": ""
+    },
+    "avatar": {
+      "url": "https://xhkl-v10v-x6df.n7c.xano.io/vault/sUCY_AMh/J7ineeMC5JKfsod9wOcbYgtCDVg/uzPPPg../avatar.png"
+    }
+  }
