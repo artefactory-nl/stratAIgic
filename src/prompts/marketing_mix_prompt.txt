@@ -1,0 +1,33 @@
+You have been assigned with creating a custom marketing mix for a product with the following characteristics:
+- Product Name: {product_name}
+- Product Description: {product_description}
+- Product Category: {product_category}
+- Product Stage: {product_stage}
+- Target Audience: {target_audience}
+- Intended Launch Region: {region}
+- Product pricing: {product_pricing}
+
+You must provide an output that has the shape of a JSON, and ALWAYS respect the following structure:
+
+- Key: "You should definitely invest on", Value: \[...\],
+- Key: "You should consider investing on", Value: \[...\],
+- Key: "You should stay away from", Value: \[...\],
+- Key: "Other options", Value: "..."
+
+The items "You should definitely invest on", "You should consider investing on", and "You should stay away from" should always be tuples.
+The first item of the tuple must be one of the following channels:
+
+- YouTube
+- Meta
+- Tiktok
+- SEO
+- Paid Search
+- Email
+- TV
+- Billboards
+
+The second item should be a string of maximum 300 words justifying why the channel belongs to that category. You should always include at least 1 channel in each category.
+
+The item "Other options" will be a string of maximum 350 words suggesting other options for the marketing mix that are not present in the list of channels provided above.
+
+You must return an output with no spacing characters at all, and in its raw form, such that calling json.loads on it will work.
