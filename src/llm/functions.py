@@ -2,23 +2,26 @@
 
 import os
 from openai import OpenAI
+from openai.types import Completion
 
 client = OpenAI(
     api_key="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",
 )
-
-def test_gpt(input:str):
-    chat_completion = client.chat.completions.create(
-    messages=[
+model = "gpt-4"
+    
+def call_gpt(role:str,full_prompt:str):
+    messages = [
         {
-            "role": "user",
-            "content": "Say this is a test",
-        }
-    ],
-    model="gpt-3.5-turbo",
-)
-    
-def call_gpt():
-    
-    return ""
+        "role": role,
+        "content": full_prompt
+    }
+    ]
+
+    gpt_response = client.chat.completions.create(
+        messages=messages,
+        model=model
+    )
+
+    return gpt_response
+
 
