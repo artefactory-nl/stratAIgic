@@ -9,7 +9,7 @@ import re
 import json
 
 
-def generate_marketing_mix(product_attributes: dict[str, str]) -> dict[str, str]:
+def generate_marketing_mix(product_attributes: dict[str, str], demo=True) -> dict[str, str]:
     """Generate marketing mix for given product.
 
     The input, business_attributes, is a dictionary containing the following keys:
@@ -21,6 +21,11 @@ def generate_marketing_mix(product_attributes: dict[str, str]) -> dict[str, str]
 
     Based on this inputs, we will return a dictionary containing the following:
     """
+    if demo:
+        with open("sample_ins_and_outs/sample_mmx_output.json", "r") as f:
+            sample_output = json.loads(f.read())
+        return sample_output
+
     client = ChatOpenAI(
         api_key="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",
     )
