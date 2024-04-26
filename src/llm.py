@@ -3,6 +3,7 @@
 import os
 from openai import OpenAI
 from openai.types import Completion
+import json
 
 client = OpenAI(
     api_key="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",
@@ -23,5 +24,7 @@ def call_gpt(role:str,full_prompt:str):
     )
 
     return gpt_response
+
+
 
 
