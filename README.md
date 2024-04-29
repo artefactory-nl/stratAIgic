@@ -5,23 +5,10 @@
 [![CI status](https://github.com/artefactory-nl/aretfact-hackathon-03/actions/workflows/ci.yaml/badge.svg)](https://github.com/artefactory-nl/aretfact-hackathon-03/actions/workflows/ci.yaml?query=branch%3Amain)
 [![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue.svg)]()
 
-[![Linting , formatting, imports sorting: ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-informational?logo=pre-commit&logoColor=white)](https://github.com/artefactory-nl/aretfact-hackathon-03/blob/main/.pre-commit-config.yaml)
 </div>
 
-TODO: if not done already, check out the [Skaff documentation](https://artefact.roadie.so/catalog/default/component/repo-builder-ds/docs/) for more information about the generated repository.
-
 Repo for team Dalai LLaMA
-
-## Table of Contents
-
-- [aretfact-hackathon-03](#aretfact-hackathon-03)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Documentation](#documentation)
-  - [Repository Structure](#repository-structure)
 
 ## Installation
 
@@ -41,25 +28,13 @@ make help
 
 ## Usage
 
-TODO: Add usage instructions here
-
-## Documentation
-
-TODO: Github pages is not enabled by default, you need to enable it in the repository settings: Settings > Pages > Source: "Deploy from a branch" / Branch: "gh-pages" / Folder: "/(root)"
-
-A detailed documentation of this project is available [here](https://artefactory-nl.github.io/aretfact-hackathon-03/)
-
-To serve the documentation locally, run the following command:
+Launch app by using the command:
 
 ```bash
-mkdocs serve
+streamlit run streamlit3.py
 ```
 
-To build it and deploy it to GitHub pages, run the following command:
-
-```bash
-make deploy_docs
-```
+In order for the LLM calls to work, you must include an OpenAI API Key in a `credentials.json` file, stored in the folder `secrets` at the root of the project.
 
 ## Repository Structure
 
