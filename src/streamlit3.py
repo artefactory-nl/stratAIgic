@@ -1,6 +1,7 @@
 import streamlit as st
 from generate_persona import generate_persona
 from generate_marketing_mix import generate_marketing_mix
+import json
 
 def generate_strategy(product_name, product_description, unique_selling_points, target_audience, region, marketing_goals, budget_range):
     return f"""
@@ -32,11 +33,11 @@ def main_page():
     st.subheader("Enter Product and Market Details")
     product_name = st.text_input("Product Name", key="product_name")
     product_description = st.text_area("Product Description", key="product_description")
-    unique_selling_points = st.text_area("Unique Selling Points", key="usp")
+    product_category = st.text_area("Product Category", key="product_category")
+    product_stage = st.text_area("Product Stage", key="product_stage")
     target_audience = st.text_input("Target Audience", key="target_audience")
     region = st.selectbox("Region", ["North America", "Europe", "Asia", "South America", "Australia"], key="region")
-    marketing_goals = st.text_input("Marketing Goals", key="marketing_goals")
-    budget_range = st.slider("Budget Range in EUR", 10000, 100000, (20000, 50000), key="budget_range")
+    product_pricing = st.text_input("Product Pricing", key="product_pricing")
     submit_button = st.button("Create Persona")
 
     if submit_button:
@@ -45,21 +46,19 @@ def main_page():
             business_attributes = {
             "product_name": product_name,
             "product_description": product_description,
-            "unique_selling_points": unique_selling_points,
+            "product_category": product_category,
+            "product_stage": product_stage,
             "target_audience": target_audience,
             "region": region,
-            "marketing_goals": marketing_goals,
-            "budget_range": budget_range,
+            "product_pricing": product_pricing
         }
             st.session_state['business_attributes'] = business_attributes
-            strategy = generate_marketing_mix(business_attributes=business_attributes)
+            strategy = generate_marketing_mix(product_attributes=business_attributes)
             st.session_state['strategy'] = strategy
 
         st.success('Your marketing Startegy is being generated')
         st.session_state["strategy_generated"] = True
         st.experimental_rerun()
-    
-
     
 def persona_page():
     st.title("User Persona Information")
@@ -79,37 +78,35 @@ def persona_page():
             "comments": comments
         }
 
-        business_attributes = st.session_state['business_attributes']
-        persona = generate_persona(business_attributes, persona_attributes=perosna_attributes)
-        st.success('Your marketing Startegy is being generated')
-        st.session_state['persona'] = persona
+            business_attributes = st.session_state['business_attributes']
+            persona = generate_persona(business_attributes, persona_attributes=perosna_attributes)
+            st.session_state['persona'] = persona
+
+        st.success('Your Persona is being generated')
         st.session_state["persona_submitted"] = True
+        st.experimental_rerun()
 
 def final_page():
     st.title("Generated marketing strategy")
     st.subheader("Product details")
     product_details = st.session_state['business_attributes']
     st.table(product_details)
-    # st.write(f"Product Name: {product_details['product_name']}")
-    # st.write(f"Product Description: {product_details['product_description']}")
-    # st.write(f"Unique Selling Points: {product_details['unique_selling_points']}")
-    # st.write(f"Target Audience: {product_details['target_audience']}")
-    # st.write(f"Region: {product_details['region']}")
-    # st.write(f"Marketing Goals: {product_details['marketing_goals']}")
-    # st.write(f"Budget Range: {product_details['budget_range']}")
 
     st.subheader("Persona details")
     persona = st.session_state['persona']
-    st.table(persona)
-    # st.write(f"Name: {persona['Name']}")
-    # st.write(f"Marketing tagline for the persona: {persona['Marketing tagline for the persona']}")
-    # st.write(f"The struggles and pains of the persona: {persona['The struggles and pains of the persona']}")
-    # st.write(f"The other products the persona thinks about: {persona['The other products the persona thinks about']}")
-    # st.write(f"The goals of the persona: {persona['The goals of the persona']}")
-    # st.write(f"The benefits of our product for the persona: {persona['The benefits of our product for the persona']}")
+    try:
+        st.write(f"Name: {persona['Name']}")
+        st.write(f"Marketing tagline for the persona: {persona['Marketing tagline for the persona']}")
+        st.write(f"The struggles and pains of the persona: {persona['The struggles and pains of the persona']}")
+        st.write(f"The other products the persona thinks about: {persona['The other products the persona thinks about']}")
+        st.write(f"The goals of the persona: {persona['The goals of the persona']}")
+        st.write(f"The benefits of our product for the persona: {persona['The benefits of our product for the persona']}")
+    except:
+        persona_json = json.dumps(persona, indent=4)
+        st.code(persona_json, language='json')
     
     st.subheader("Strategy")
-    st.write(".....")
+    st.write(st.session_state['strategy'])
 
 
 # Display the logo in the sidebar
