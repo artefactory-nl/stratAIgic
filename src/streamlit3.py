@@ -89,7 +89,7 @@ def persona_page():
 # Function to display the final marketing page
 def final_page():
     # Set the title of the page
-    st.title("Generated marketing strategy")
+    st.title("Generated marketing strategy 🚀")
 
     # Create 2 columns layout for better organization
     card_col, dataframes_col = st.columns(2)
@@ -154,11 +154,12 @@ def final_page():
     with strategy_tab:
         # Retrieve strategy data from session state
         strategy_data = st.session_state['strategy']
+        emojis = ["✅", "🤔", "❌", "📝"]
 
         # Iterate over suggestion types and display strategy details
-        for suggestion_type in strategy_data:
+        for i, suggestion_type in enumerate(strategy_data):
             if suggestion_type != "Other options":
-                st.write(f"**{suggestion_type}**:")
+                st.write(f"{emojis[i]} **{suggestion_type}**:")
                 for channel in strategy_data[suggestion_type]:
                     channel_name= channel[0]
                     channel_motivation = channel[1]
@@ -166,7 +167,7 @@ def final_page():
                         st.write(channel_motivation)
             else:
                 # Display other options if available
-                st.write(f"**{suggestion_type}**:")
+                st.write(f"{emojis[-1]} **{suggestion_type}**:")
                 st.write(strategy_data[suggestion_type])
 
 # Set wide mode for the page layout
@@ -175,7 +176,7 @@ st.set_page_config(layout="wide")
 # Display the logo in the sidebar
 logo_path = r"../lib/StratAIgic.png"
 st.sidebar.image(logo_path, use_column_width=True)
-st.sidebar.header("Generated Marketing Strategy")
+st.sidebar.header("Unleash AI, Conquer Markets")
 
 # Setup pages
 if "strategy_generated" not in st.session_state:
