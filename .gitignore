@@ -138,3 +138,6 @@ secrets/*
 .DS_Store
 
 .databricks
+
+# Env files
+.env
