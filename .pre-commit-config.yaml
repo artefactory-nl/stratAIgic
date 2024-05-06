@@ -6,13 +6,4 @@ repos:
       - id: end-of-file-fixer
       - id: check-toml
       - id: check-yaml
-      - id: check-json
-  - repo: local
-    hooks:
-      - id: nbstripout
-        name: Strip Jupyter notebook output (nbstripout)
-        entry: nbstripout
-        types: [file]
-        files: (.ipynb)$
-        language: system
 exclude: ^(.svn|CVS|.bzr|.hg|.git|__pycache__|.tox|.ipynb_checkpoints|assets|tests/assets/|venv/|.venv/)
