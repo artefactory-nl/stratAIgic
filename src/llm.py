@@ -8,10 +8,11 @@ from dotenv import load_dotenv
 load_dotenv()  # take environment variables from .env
 
 client = OpenAI(
-    api_key=os.getenv("API_KEY"),
+    #api_key=os.getenv("API_KEY"),
+    api_key="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"
 )
 model = "gpt-4"
-    
+
 def call_gpt(role:str,full_prompt:str):
     messages = [
         {
@@ -26,7 +27,3 @@ def call_gpt(role:str,full_prompt:str):
     )
 
     return gpt_response
-
-
-
-
