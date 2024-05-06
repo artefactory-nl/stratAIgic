@@ -182,7 +182,7 @@ def final_page():
 st.set_page_config(layout="wide")
 
 # Display the logo in the sidebar
-logo_path = r"../lib/StratAIgic.png"
+logo_path = r"lib/StratAIgic.png"
 st.sidebar.image(logo_path, use_column_width=True)
 st.sidebar.header("Unleash AI, Conquer Markets")
 
