@@ -2,7 +2,6 @@ import streamlit as st
 from generate_persona import generate_persona
 from generate_marketing_mix import generate_marketing_mix
 import json
-import json
 
 def generate_strategy(product_name, product_description, unique_selling_points, target_audience, region, marketing_goals, budget_range):
     return f"""
@@ -36,13 +35,10 @@ def main_page():
     product_description = st.text_area("Product Description", key="product_description")
     product_category = st.text_area("Product Category", key="product_category")
     product_stage = st.text_area("Product Stage", key="product_stage")
-    product_category = st.text_area("Product Category", key="product_category")
-    product_stage = st.text_area("Product Stage", key="product_stage")
     target_audience = st.text_input("Target Audience", key="target_audience")
     region = st.selectbox("Region", ["North America", "Europe", "Asia", "South America", "Australia"], key="region")
     product_pricing = st.text_input("Product Pricing", key="product_pricing")
-    product_pricing = st.text_input("Product Pricing", key="product_pricing")
-    submit_button = st.button("Create Persona")
+    submit_button = st.button("Next")
 
     if submit_button:
         with st.spinner('Processing Strategy...'):
@@ -52,29 +48,25 @@ def main_page():
             "product_description": product_description,
             "product_category": product_category,
             "product_stage": product_stage,
-            "product_category": product_category,
-            "product_stage": product_stage,
             "target_audience": target_audience,
             "region": region,
             "product_pricing": product_pricing
-            "product_pricing": product_pricing
         }
             st.session_state['business_attributes'] = business_attributes
-            strategy = generate_marketing_mix(product_attributes=business_attributes)
             strategy = generate_marketing_mix(product_attributes=business_attributes)
             st.session_state['strategy'] = strategy
 
         st.success('Your marketing Startegy is being generated')
         st.session_state["strategy_generated"] = True
         st.experimental_rerun()
-    
+
 def persona_page():
     st.title("User Persona Information")
     gender = st.selectbox("Gender", ["Male", "Female", "Non-binary", "Prefer not to say"], key="gender")
     country = st.text_input("Country", key="country")
     age = st.slider("Age", 18, 100, 25, key="age")
     comments = st.text_area("Comments", key="comments")
-    submit_button = st.button("Submit Persona Details")
+    submit_button = st.button("Generate Persona and Marketing Strategy")
 
     if submit_button:
         with st.spinner('Processing Persona...'):
@@ -89,15 +81,10 @@ def persona_page():
             business_attributes = st.session_state['business_attributes']
             persona = generate_persona(business_attributes, persona_attributes=perosna_attributes)
             st.session_state['persona'] = persona
-
-        st.success('Your Persona is being generated')
-            business_attributes = st.session_state['business_attributes']
-            persona = generate_persona(business_attributes, persona_attributes=perosna_attributes)
-            st.session_state['persona'] = persona
+            st.session_state["persona_attributes"] = perosna_attributes
 
         st.success('Your Persona is being generated')
         st.session_state["persona_submitted"] = True
-        st.experimental_rerun()
         st.experimental_rerun()
 
 # Function to display the final marketing page
@@ -120,15 +107,15 @@ def final_page():
         use_container_width=True
     )
 
-    # Placeholder for similar products, to be filled with AI response
-    similar_products = {} # TODO: Get the similar products as LLM response
+    # # Placeholder for similar products, to be filled with AI response
+    # similar_products = {} # TODO: Get the similar products as LLM response
 
-    # Display similar products in a dataframe
-    dataframes_col.dataframe(
-        similar_products,
-        column_config={"": "Similar Products - AI powered", "value": ""},
-        use_container_width=True
-    )
+    # # Display similar products in a dataframe
+    # dataframes_col.dataframe(
+    #     similar_products,
+    #     column_config={"": "Similar Products - AI powered", "value": ""},
+    #     use_container_width=True
+    # )
 
     # Add tabs for persona and strategy sections
     persona_tab, strategy_tab = card_col.tabs(["Persona - AI Generated", "Marketing Startegy - AI Generated"])
@@ -137,15 +124,21 @@ def final_page():
     with persona_tab:
         # Retrieve persona data and parse JSON
         persona = st.session_state["persona"]
+        persona_attributes = st.session_state["persona_attributes"]
         persona_data = json.loads(persona)
         img_col, description_col = st.columns(2)
-        
+
         # Display persona image (placeholder for now)
-        img_col.image(logo_path, use_column_width=True) # TODO: add image generated by LLM
-        
+        persona_image = r"../lib/persona_image.png" # created using OpenArt LLM
+        img_col.image(persona_image, use_column_width=True) # TODO: add image generated by LLM
+
         # Display persona details
         try:
-            description_col.write(persona_data["Name"])
+            description_col.write(f"""{persona_data["Name"]}""")
+            if len(persona_data["Name"]) < 40:
+                description_col.write(f"""Gender: {persona_attributes["gender"]}""")
+                description_col.write(f"""Country: {persona_attributes["country"]}""")
+                description_col.write(f"""Age: {persona_attributes["age"]}""")
             with st.expander("Marketing tagline", expanded=False):
                 st.write(persona_data['Marketing tagline for the persona'])
             with st.expander("Struggles and pains", expanded=False):
@@ -183,6 +176,7 @@ def final_page():
                 # Display other options if available
                 st.write(f"{emojis[-1]} **{suggestion_type}**:")
                 st.write(strategy_data[suggestion_type])
+
 
 # Set wide mode for the page layout
 st.set_page_config(layout="wide")
