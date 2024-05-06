@@ -9,7 +9,7 @@ import re
 import json
 
 
-def generate_marketing_mix(product_attributes: dict[str, str], demo=True) -> dict[str, str]:
+def generate_marketing_mix(product_attributes: dict[str, str], demo=False) -> dict[str, str]:
     """Generate marketing mix for given product.
 
     The input, business_attributes, is a dictionary containing the following keys:
