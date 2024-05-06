@@ -43,7 +43,7 @@ def create_persona_with_LLM(persona_attributes, product_category, product_descri
     gpt_response = call_gpt(role="user", full_prompt=prompt)
 
     response_text = gpt_response.choices[0].message.content
-    
+
     persona = transform_to_json(response_text)
     print(persona)
     persona = re.sub(r"(')(?=\w+:)|(?<=: )(')", '"', persona)
@@ -62,10 +62,11 @@ def create_persona_with_LLM(persona_attributes, product_category, product_descri
     else:
         print("PERSONA CREATED SUCCESSFULLY")
         print(persona)
-        return persona
-    
+        return json.dumps(persona)
+
 def transform_to_json(input_str):
-    json_prompt = f"""Convert the following into proper json containing 5 keys \n {input_str}"""
+    json_prompt = f"""Convert the following into proper json containing 6 keys \n {input_str}.
+    Do not add any other information."""
     response = call_gpt(role="user", full_prompt=json_prompt)
     json_response = response.choices[0].message.content
     print(f"""This will be converted to json \n {json_response}""")
@@ -84,7 +85,7 @@ def transform_to_json(input_str):
 
     #for every key in the response find the closest value from expected keys
     for key in json_response.keys():
-        closest_key_prompt = f"""Find the closest value for {key} from items below. 
+        closest_key_prompt = f"""Find the closest value for {key} from items below.
 
         The struggles and pains of the persona
         Name
@@ -92,13 +93,13 @@ def transform_to_json(input_str):
         The goals of the persona
         The benefits of our product for the persona
         Marketing tagline for the persona
-        
+
         Write only one value from the list. Do not add any other information"""
-        
+
         closest_key_response = call_gpt(role="user", full_prompt=closest_key_prompt)
         closest_key = closest_key_response.choices[0].message.content
         if closest_key in expected_keys:
-            expected_json[closest_key] = json_response[key]            
+            expected_json[closest_key] = json_response[key]
         else:
             print(f"""json Key : {key} \n Closest Key : {closest_key} """)
 
@@ -106,7 +107,7 @@ def transform_to_json(input_str):
 
 def add_name_of_persona(persona):
     name_prompt = f"""Write the name of the person fron the following information. Do not add any other information.
-    
+
     {persona}
     """
 
@@ -115,7 +116,9 @@ def add_name_of_persona(persona):
     persona["Name"] = name
     persona = json.dumps(persona) #convert to string
     persona = re.sub(r"(')(?=\w+:)|(?<=: )(')", '"', persona) # fix the single quotes issues
-    return persona.loads(persona)   
+    return persona.loads(persona)
+
+
 
 if __name__ == '__main__':
     persona_attributes = {
