@@ -2,6 +2,7 @@ import streamlit as st
 from generate_persona import generate_persona
 from generate_marketing_mix import generate_marketing_mix
 import json
+import json
 
 def generate_strategy(product_name, product_description, unique_selling_points, target_audience, region, marketing_goals, budget_range):
     return f"""
@@ -35,8 +36,11 @@ def main_page():
     product_description = st.text_area("Product Description", key="product_description")
     product_category = st.text_area("Product Category", key="product_category")
     product_stage = st.text_area("Product Stage", key="product_stage")
+    product_category = st.text_area("Product Category", key="product_category")
+    product_stage = st.text_area("Product Stage", key="product_stage")
     target_audience = st.text_input("Target Audience", key="target_audience")
     region = st.selectbox("Region", ["North America", "Europe", "Asia", "South America", "Australia"], key="region")
+    product_pricing = st.text_input("Product Pricing", key="product_pricing")
     product_pricing = st.text_input("Product Pricing", key="product_pricing")
     submit_button = st.button("Create Persona")
 
@@ -48,11 +52,15 @@ def main_page():
             "product_description": product_description,
             "product_category": product_category,
             "product_stage": product_stage,
+            "product_category": product_category,
+            "product_stage": product_stage,
             "target_audience": target_audience,
             "region": region,
             "product_pricing": product_pricing
+            "product_pricing": product_pricing
         }
             st.session_state['business_attributes'] = business_attributes
+            strategy = generate_marketing_mix(product_attributes=business_attributes)
             strategy = generate_marketing_mix(product_attributes=business_attributes)
             st.session_state['strategy'] = strategy
 
@@ -83,7 +91,13 @@ def persona_page():
             st.session_state['persona'] = persona
 
         st.success('Your Persona is being generated')
+            business_attributes = st.session_state['business_attributes']
+            persona = generate_persona(business_attributes, persona_attributes=perosna_attributes)
+            st.session_state['persona'] = persona
+
+        st.success('Your Persona is being generated')
         st.session_state["persona_submitted"] = True
+        st.experimental_rerun()
         st.experimental_rerun()
 
 # Function to display the final marketing page
