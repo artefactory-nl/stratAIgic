@@ -27,7 +27,7 @@ def generate_marketing_mix(product_attributes: dict[str, str], demo=False) -> di
         return sample_output
 
     client = ChatOpenAI(
-        api_key="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",
+        api_key="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",
     )
     # Define paths
     path_to_prompts = Path('src/prompts')

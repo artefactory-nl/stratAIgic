@@ -9,7 +9,7 @@ load_dotenv()  # take environment variables from .env
 
 client = OpenAI(
     #api_key=os.getenv("API_KEY"),
-    api_key="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"
+    api_key="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"
 )
 model = "gpt-4"
 
