@@ -3,10 +3,12 @@
 import os
 from openai import OpenAI
 from openai.types import Completion
-import json
+from dotenv import load_dotenv
+
+load_dotenv()  # take environment variables from .env
 
 client = OpenAI(
-    api_key="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",
+    api_key=os.getenv("API_KEY"),
 )
 model = "gpt-4"
     

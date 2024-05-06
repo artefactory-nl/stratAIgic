@@ -41,6 +41,26 @@ def create_persona_with_LLM(persona_attributes, product_category, product_descri
     return transform_to_json(response_text)
 
 def transform_to_json(input_str):
-    prompt = f"""Convert the following into proper json containing 5 keys \n {input_str}"""
+    prompt = f"""Convert the following 6 persona details: {input_str} in a json format containing 5 keys,
+    one for each detail. Don't modify the persona details at all when you use them as key,
+    don't lowercase them and keep the whitespaces.
+
+    Always answer in the following json format:
+
+    {{
+        "<persona detail key>":"<persona detail value>",
+        "<persona detail key>":"<persona detail value>",
+        "<persona detail key>":"<persona detail value>",
+        "<persona detail key>":"<persona detail value>",
+        "<persona detail key>":"<persona detail value>",
+        "<persona detail key>":"<persona detail value>",
+    }}
+
+
+    ----------------------------------------
+    
+    ONLY JSON IS ALLOWED as an answer. No explanation or other text is allowed.
+
+    """
     response = call_gpt(role="user", full_prompt=prompt)
     return response.choices[0].message.content

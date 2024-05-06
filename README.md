@@ -34,7 +34,15 @@ Launch app by using the command:
 streamlit run streamlit3.py
 ```
 
-In order for the LLM calls to work, you must include an OpenAI API Key in a `credentials.json` file, stored in the folder `secrets` at the root of the project.
+To enable LLM calls, ensure you have an OpenAI API Key by following these steps:
+
+1. Create a `.env` file in the project's root directory:
+    ```bash
+    # .env
+    API_KEY=YOUR_OPENAI_API_KEY
+    ```
+
+2. Replace `YOUR_OPENAI_API_KEY` with your actual OpenAI API key.
 
 ## Repository Structure
 
@@ -46,6 +54,5 @@ In order for the LLM calls to work, you must include an OpenAI API Key in a `cre
 ├── docs       <- Documentation files (mkdocs)
 ├── lib        <- Python modules
 ├── notebooks  <- Jupyter notebooks
-├── secrets    <- Secret files (ignored by git)
 └── tests      <- Unit tests
 ```
