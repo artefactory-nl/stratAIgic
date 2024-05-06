@@ -30,7 +30,7 @@ def generate_marketing_mix(product_attributes: dict[str, str], demo=False) -> di
         api_key="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",
     )
     # Define paths
-    path_to_prompts = Path('./prompts')
+    path_to_prompts = Path('src/prompts')
     path_to_system_prompt = path_to_prompts / 'system_prompt.txt'
     path_to_marketing_mix_prompt = path_to_prompts / 'marketing_mix_prompt.txt'
 
