@@ -141,3 +141,6 @@ secrets/*
 
 # Env files
 .env
+
+# Streamlit
+.streamlit/
