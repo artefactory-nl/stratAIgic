@@ -7,12 +7,12 @@ from langchain.prompts import (
 from pathlib import Path
 import re
 import json
-import toml
+import streamlit as st
 
-config = toml.load(".streamlit/secrets.toml")
+
 client = ChatOpenAI(
     #api_key=os.getenv("API_KEY"),
-    api_key=config["OPENAI_API_KEY"]
+    api_key=st.secrets["OPENAI_API_KEY"]
 )
 
 
@@ -33,9 +33,7 @@ def generate_marketing_mix(product_attributes: dict[str, str], demo=False) -> di
             sample_output = json.loads(f.read())
         return sample_output
 
-    client = ChatOpenAI(
-        api_key="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",
-    )
+
     # Define paths
     path_to_prompts = Path('src/prompts')
     path_to_system_prompt = path_to_prompts / 'system_prompt.txt'

@@ -4,14 +4,14 @@ import os
 from openai import OpenAI
 from openai.types import Completion
 from dotenv import load_dotenv
-import toml
+import streamlit as st
 
 load_dotenv()  # take environment variables from .env
 
-config = toml.load(".streamlit/secrets.toml")
+
 client = OpenAI(
     #api_key=os.getenv("API_KEY"),
-    api_key=config["OPENAI_API_KEY"]
+    api_key=st.secrets["OPENAI_API_KEY"]
 )
 model = "gpt-4"
 
