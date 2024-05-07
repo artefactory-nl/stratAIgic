@@ -8,7 +8,7 @@ import toml
 
 load_dotenv()  # take environment variables from .env
 
-config = toml.load("../.streamlit/secrets.toml")
+config = toml.load(".streamlit/secrets.toml")
 client = OpenAI(
     #api_key=os.getenv("API_KEY"),
     api_key=config["OPENAI_API_KEY"]

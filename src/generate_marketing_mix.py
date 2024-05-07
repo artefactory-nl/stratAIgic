@@ -7,6 +7,13 @@ from langchain.prompts import (
 from pathlib import Path
 import re
 import json
+import toml
+
+config = toml.load(".streamlit/secrets.toml")
+client = ChatOpenAI(
+    #api_key=os.getenv("API_KEY"),
+    api_key=config["OPENAI_API_KEY"]
+)
 
 
 def generate_marketing_mix(product_attributes: dict[str, str], demo=False) -> dict[str, str]:
