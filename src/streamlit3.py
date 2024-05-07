@@ -1,5 +1,5 @@
 import streamlit as st
-st.write(st.secrets["OPENAI_API_KEY"])
+st.write(st.secrets)
 
 from generate_persona import generate_persona
 from generate_marketing_mix import generate_marketing_mix
