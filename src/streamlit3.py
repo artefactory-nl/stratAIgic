@@ -31,6 +31,7 @@ def generate_strategy(product_name, product_description, unique_selling_points, 
 def main_page():
     st.title("StratAIgic: an AI-Powered Marketing Strategy Generator")
     st.subheader("Enter Product and Market Details")
+    st.write(st.secrets["OPENAI_API_KEY"])
     product_name = st.text_input("Product Name", key="product_name")
     product_description = st.text_area("Product Description", key="product_description")
     product_category = st.text_area("Product Category", key="product_category")
