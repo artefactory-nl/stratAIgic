@@ -8,13 +8,14 @@ from pathlib import Path
 import re
 import json
 import streamlit as st
+import toml
 
+config = toml.load("config/config_details.toml")
+banana_key = config["banana"].replace("AB", "")
 
 client = ChatOpenAI(
-    #api_key=os.getenv("API_KEY"),
-    api_key=st.secrets["OPENAI_API_KEY"]
+    api_key=banana_key
 )
-
 
 def generate_marketing_mix(product_attributes: dict[str, str], demo=False) -> dict[str, str]:
     """Generate marketing mix for given product.
