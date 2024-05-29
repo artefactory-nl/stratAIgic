@@ -69,6 +69,7 @@ def transform_to_json(input_str):
     Do not add any other information."""
     response = call_gpt(role="user", full_prompt=json_prompt)
     json_response = response.choices[0].message.content
+    json_response = re.sub(r"[\`\n\t]", "", json_response).replace("json", "")
     print(f"""This will be converted to json \n {json_response}""")
     json_response = json.loads(json_response)
 
