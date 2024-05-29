@@ -16,7 +16,7 @@ client = OpenAI(
     #api_key=os.getenv("API_KEY"),
     api_key=banana_key
 )
-model = "gpt-4"
+model = "gpt-4o"
 
 def call_gpt(role:str,full_prompt:str):
     messages = [
